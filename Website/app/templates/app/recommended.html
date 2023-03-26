@@ -2,22 +2,24 @@
 {% load static %}
 {% block title %}Recommended{% endblock title %}
 {% block main-content %}
-<div class="container my-5">
+<div class="m-3"> 
+<!-- <div class="container my-5">
     <div class="col-sm-8">
-     <div class="'row">
+     <div class="'row"> -->
         {% for b in new %}
         {%for a in b%}
+        
          <a href="{% url 'product-detail' a.id %}" class="btn">
           <div class="item">
            <img src="{{a.product_image.url}}" alt="" height="300"  class=""> 
             <div class="fw-bold">{{ a.title }}</div>
             <div class="fw-bold">Rs.{{ a.price }}</div>
-          </div>
+            </div>
          </a>
+        
          {% endfor %}
         {% endfor %}
     
-    </div>
-</div>  
+
 </div>  
 {% endblock main-content %}
